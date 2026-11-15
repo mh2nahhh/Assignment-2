@@ -1,0 +1,64 @@
+public class Queue {
+    int arr[] = new int[5];
+    int front = -1;
+    int rear = -1;
+
+    // Enqueue operation
+    void enqueue(int value) {
+        if (rear == 4) {
+            System.out.println("Queue Overflow");
+        } else {
+            if (front == -1) {
+                front = 0;
+            }
+            rear++;
+            arr[rear] = value;
+            System.out.println(value + " inserted");
+        }
+    }
+
+    // Dequeue operation
+    void dequeue() {
+        if (front == -1 || front > rear) {
+            System.out.println("Queue Underflow");
+        } else {
+            System.out.println(arr[front] + " removed");
+            front++;
+        }
+    }
+
+    // Front operation
+    void showFront() {
+        if (front == -1 || front > rear) {
+            System.out.println("Queue is Empty");
+        } else {
+            System.out.println("Front Element: " + arr[front]);
+        }
+    }
+
+    // Display operation
+    void display() {
+        if (front == -1 || front > rear) {
+            System.out.println("Queue is Empty");
+        } else {
+            System.out.println("Queue Elements:");
+            for (int i = front; i <= rear; i++) {
+                System.out.println(arr[i]);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Queue q = new Queue();
+
+        q.enqueue(10);
+        q.enqueue(20);
+        q.enqueue(30);
+
+        q.display();
+        q.showFront();
+
+        q.dequeue();
+        q.display();
+    }
+}
