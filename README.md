@@ -2,4 +2,4 @@
 Submitted by   
                   MUHAMMAD HASEEB
 Submitted To    
-                  Sir Tajmir Khan
+                  Sir TAJMIR KHAN
